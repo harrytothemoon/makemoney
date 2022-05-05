@@ -5,6 +5,8 @@ import Head from "next/head";
 import { Provider } from "react-redux";
 import { wrapper, store } from "../redux/store";
 
+import { TITLE } from "src/constants/productName.js";
+
 import { CacheProvider } from "@emotion/react";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
@@ -26,7 +28,7 @@ const App = (props) => {
     <Provider store={store}>
       <CacheProvider value={emotionCache}>
         <Head>
-          <title>NotiFicaTion</title>
+          <title>{TITLE}</title>
           <meta name="viewport" content="initial-scale=1, width=device-width" />
         </Head>
         <LocalizationProvider dateAdapter={AdapterDateFns}>

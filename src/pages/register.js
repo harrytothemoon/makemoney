@@ -5,6 +5,8 @@ import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 
+import { TITLE } from "src/constants/productName.js";
+
 import Cookie from "../utils/clientSideCookie";
 import fetchAPI from "../utils/clientSideFetch";
 
@@ -56,7 +58,7 @@ const Register = () => {
   return (
     <>
       <Head>
-        <title>Register | Material Kit</title>
+        <title>Register | {TITLE}</title>
       </Head>
       <Box
         component="main"
