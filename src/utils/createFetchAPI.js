@@ -6,7 +6,7 @@ const getHeaders = ({ options, authToken }) => {
     Accept: "application/json",
     "Content-Type": "application/json",
     ...options?.headers,
-    ...(authToken && { "Business-Authorization": `Bearer ${authToken}` }),
+    ...(authToken && { Authorization: `Bearer ${authToken}` }),
   };
 
   // when fetch's request body is FormData, content-type header should leave
@@ -34,7 +34,6 @@ export default function createFetchAPI(fetch, basicOptions = {}) {
 
     const headers = getHeaders({ options, authToken });
     const body = getBody(options);
-
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}${url}`, {
       method: "GET",
       mode: "cors",
