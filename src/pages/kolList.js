@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import { fetchKolList } from "src/redux/actions/kolList";
 import { getKolList } from "src/redux/reducers/kolList/selectors.js";
 

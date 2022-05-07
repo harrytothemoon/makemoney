@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import PropTypes from "prop-types";
+import numeral from "numeral";
 import {
   Avatar,
   Box,
@@ -76,7 +77,7 @@ export const KolListResults = ({ kolList, ...rest }) => {
                     </TableCell>
                     <TableCell>{description}</TableCell>
                     <TableCell>{postsCount}</TableCell>
-                    <TableCell>{followCount}</TableCell>
+                    <TableCell>{numeral(followCount).format("0a")}</TableCell>
                   </TableRow>
                 ))}
             </TableBody>
