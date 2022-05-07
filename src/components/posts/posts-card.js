@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
+import numeral from "numeral";
 import { Avatar, Box, Card, CardContent, Divider, Grid, Typography, Link } from "@mui/material";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import { Clock as ClockIcon } from "../../icons/clock";
-import { Download as DownloadIcon } from "../../icons/download";
 
 export const PostsCard = ({ post, ...rest }) => (
   <Card
@@ -72,7 +72,7 @@ export const PostsCard = ({ post, ...rest }) => (
         >
           <ThumbUpIcon color="action" />
           <Typography color="textSecondary" display="inline" sx={{ pl: 1 }} variant="body2">
-            {post.likeCount}
+            {numeral(post.likeCount).format("0a")}
           </Typography>
         </Grid>
       </Grid>
